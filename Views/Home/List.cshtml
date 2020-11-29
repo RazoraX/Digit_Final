@@ -1,0 +1,27 @@
+﻿@using System.IO; 
+@model ClassFileViewModel
+@{
+    ViewData["Title"] = "Согласование";
+}
+@{
+    foreach (var temp in Model.AllFile)
+    {
+        string e = temp.FullName.Substring(temp.FullName.LastIndexOf(".") + 1);
+        string picSrc = "";
+        if (e == "docx" || e=="doc")
+            picSrc = "ResPic/Word.png";
+        if (e == "pdf")
+            picSrc = "ResPic/PDF.png";
+        if (e == "sig")
+            picSrc = "ResPic/ETsP.png";
+    <div class="tasks">
+        <div class="task" data-id="@temp.Id">
+            <div class="task__content">
+                <img id="im" src="@picSrc" />
+                @temp.Name
+            </div>
+        </div>
+    </div>
+    }
+}
+

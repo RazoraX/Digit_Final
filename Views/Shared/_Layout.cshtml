@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Natus est Scientia</title>
+    <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">Natus Est Scientia</div>
+    </header>
+    <div class="nav-btn">Menu</div>
+    <div class="container">
+        <div class="sidebar">
+            <nav>
+                <a href="#"><img src="~/ResPic/Novik.png" />Natus Est Scientia</a>
+                <ul>
+                    <li class="active"><a href="#">Согласование ответа</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <h1>Согласование ответа</h1>
+            <div class="panel-wrapper">
+                <div class="panel-head">
+                    <p>→ Нажми для подтверждения согласования ←</p>
+                </div>
+                <div class="panel-body">
+                    @RenderBody()    
+                </div>
+            </div>
+            <div class="panel-body">
+                <span id="sertif">Эмитент: VA VKO, действителен до 28.11.2022 г.<br>VA VKO<br>Срок действия с : 2020/11/28 10:32:10 + 03'00'<br>Срок действия до : 2022/11/28 10:32:10 + 03'00'</span>
+            </div>
+        </div>
+    </div>
+    <nav id="context-menu" class="context-menu">
+        <ul class="context-menu__items">
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Edit"><i class="fa fa-edit"></i>Подписать</a>
+            </li>
+
+        </ul>
+    </nav>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
